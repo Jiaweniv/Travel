@@ -4,9 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import fastClick from 'fastclick'
-import './assets/styles/normalize.css'//初始化样式
-import './assets/styles/border.css' //1像素高倍屏结局方案
-//click 事件延迟300s 解决方案  npm install fastclick --save
+import 'styles/reset.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
