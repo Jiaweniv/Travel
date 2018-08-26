@@ -2,7 +2,7 @@
   <div class="recommend">
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" alt="" srcset="">
         <div class="item-info">
           <p class="item-title">{{ item.title }}</p>
@@ -16,60 +16,13 @@
 <script>
   export default {
     name: 'HomeRecommend',
-    data() {
-      return {
-        recommendList:[{
-          id: '001',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          title: '景点门票',
-          desc: '测试'
-        },{
-          id: '002',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '003',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '004',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '005',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '006',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '007',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '008',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        },{
-          id: '009',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票',
-          title: '景点门票'
-        }]
-      }
+    props: {
+      list: Array
     },
     computed: {
       pages(){
         const pages = [];
-        this.iconList.forEach((item,index) => {
+        this.list.forEach((item,index) => {
           const page = Math.floor(index/8)
           if(!pages[page]){
             pages[page] = [];

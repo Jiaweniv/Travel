@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item in page" :key="item.id">
           <div class="icon-img">
@@ -15,51 +15,20 @@
 <script>
   export default {
     name: 'HomeIcons',
+    props: {
+      list: Array
+    },
     data() {
       return {
-        iconList:[{
-          id: '001',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '002',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '003',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '004',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '005',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '006',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '007',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '008',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        },{
-          id: '009',
-          imgUrl: 'https://pic.c-ctrip.com/VacationH5Pic/group_travel/index/zby_14.png',
-          desc: '景点门票'
-        }]
+        swiperOption: {
+          autoplay: false
+        },
       }
     },
     computed: {
       pages(){
         const pages = [];
-        this.iconList.forEach((item,index) => {
+        this.list.forEach((item,index) => {
           const page = Math.floor(index/8)
           if(!pages[page]){
             pages[page] = [];
