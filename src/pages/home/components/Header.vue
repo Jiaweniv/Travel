@@ -5,9 +5,11 @@
             </div>
         <div class="header-input">
             <span class="iconfont">&#xe632;</span>输入城市/景点/主题</div>
-        <div class="header-right">
+        <router-link to="/City">
+            <div class="header-right">
             {{ city }}
             <span class="iconfont arrow-icon">&#xe64a;</span></div>
+        </router-link>
     </div>
 </template>
 <script>
@@ -23,7 +25,7 @@
     .header
         display: flex
         background: $bgColor
-        line-height: .86rem
+        line-height: $headerHeight
         color: #ffffff
         .header-left
             width: .64rem
@@ -45,6 +47,7 @@
             width: 1.24rem
             float: right 
             text-align : center
+            color #ffffff
             .arrow-icon
                 font-size :.24rem
                 margin-left : -.04rem

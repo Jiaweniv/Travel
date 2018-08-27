@@ -18,19 +18,6 @@
     name: 'HomeRecommend',
     props: {
       list: Array
-    },
-    computed: {
-      pages(){
-        const pages = [];
-        this.list.forEach((item,index) => {
-          const page = Math.floor(index/8)
-          if(!pages[page]){
-            pages[page] = [];
-          }
-          pages[page].push(item);
-        })
-        return pages
-      }
     }
   }
 </script>
