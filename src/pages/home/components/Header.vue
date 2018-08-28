@@ -25,34 +25,33 @@
 <style lang="stylus" scoped>
     @import '~styles/varibles.styl';
     .header
-        display: flex
-        background: $bgColor
-        line-height: $headerHeight
-        color: #ffffff
+        display flex
+        background $bgColor
+        line-height $headerHeight
+        color #ffffff
         .header-left
-            width: .64rem
-            float: left
+            width .64rem
+            float left
             .back-icon
-                font-size : .4rem
+                font-size .4rem
                 text-align center
         .header-input
-            flex: 1
-            background :#fff
-            border-radius : .1rem
-            margin-top: .12rem
-            line-height: .64rem
-            height: .64rem
-            margin-left : .2rem
-            padding-left : .2rem
-            color: #ccc
+            flex 1
+            background #fff
+            border-radius .1rem
+            margin-top .12rem
+            line-height .64rem
+            height .64rem
+            margin-left .2rem
+            padding-left .2rem
+            color #ccc
         .header-right
-            min-width: 1.04rem
-            padding: 0 .1rem
-            float: right 
-            text-align : center
+            min-width 1.04rem
+            padding 0 .1rem
+            float right 
+            text-align center
             color #ffffff
-            ellipsis()
             .arrow-icon
-                font-size :.24rem
-                margin-left : -.04rem
+                font-size .24rem
+                margin-left -.04rem
 </style>
