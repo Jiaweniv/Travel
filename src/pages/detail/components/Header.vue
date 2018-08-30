@@ -31,6 +31,9 @@
                 }
             }
         },
+        deactivated () {
+            window.removeEventListener('scroll', this.handleScroll)
+        },
         activated () {
             window.addEventListener('scroll', this.handleScroll)
         },
@@ -77,6 +80,7 @@
         top 0
         left 0
         right 0
+        z-index 2
         .header-fixed-back
             position absolute
             top 0

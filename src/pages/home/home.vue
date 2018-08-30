@@ -35,7 +35,6 @@
             HomeWeekend
         },
         mounted(){
-            console.log('mounctend')
             this.lastCity = this.city;
             this.getHomeInfo()
         },

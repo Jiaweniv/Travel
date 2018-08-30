@@ -1,33 +1,47 @@
 <template>
     <div>
         <div class="banner" @click="handleBannerClick">
-            <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1703/57/5794796148ac680da3.img.png_600x330_6e1cc583.png" alt="" srcset="">
+            <img class="banner-img" :src="bannerImg" >
             <div class="banner-info">
-                <div class="banner-title">乐华城•乐华欢乐世界</div>
+                <div class="banner-title">{{ this.sightName }}</div>
                 <div class="banner-number">
-                                    <span class="iconfont banner-icon">&#xe692;</span>
-                    39</div>
+                    <span class="iconfont banner-icon">&#xe692;</span>
+                    {{ this.bannerImgLength }}
+                </div>
             </div>
         </div>
-        <common-gallary 
-            :imgs="imgs" 
-            v-show="showGallary"
-            @close = "handleGallaryClose"
-        >
-        </common-gallary>
+        <common-fade>
+            <common-gallary 
+                :imgs="bannerImgs" 
+                v-show="showGallary"
+                @close = "handleGallaryClose"
+            >
+            </common-gallary>
+        </common-fade>
     </div>
 </template>
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import CommonFade from 'common/fade/Fade'
     export default{
         name: 'DetailBanner',
+        props: {
+            sightName: String,
+            bannerImg: String,
+            bannerImgs: Array
+        },
         components: {
-            CommonGallary
+            CommonGallary,
+            CommonFade
+        },
+        computed: {
+            bannerImgLength() {
+                return this.bannerImgs.length
+            }
         },
         data(){
             return{
-                showGallary:false,
-                imgs:['//img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_600x330_a807626a.jpg','//img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_600x330_a807626a.jpg','//img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_600x330_a807626a.jpg','//img1.qunarzz.com/sight/p0/1805/78/789e31213399290fa3.water.jpg_600x330_a807626a.jpg']
+                showGallary:false
             }
         },
         methods:{
